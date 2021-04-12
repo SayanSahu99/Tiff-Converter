@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Welcome</title>
+    </head>
+    <body>
+         {% block content %}
+         <div class="d-flex justify-content-center align-items-center">
+        <div class="card">
+          <div class="card-body">
+            <div class="container">
+              <form  action="/" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <label for="formFileMultiple" class="form-label">Upload Files</label>
+                  <input class="form-control form-control-lg" type="file" id="formFileMultiple"
+                  name="files[]" accept=".tif" multiple>
+                </div>
+                <button type="submit" class="btn btn-primary">Convert</button>
+              </form>
+            </div>
+          </div>
+        </div>
+         </div>
+        {% endblock %}
+    </body>
+</html>
