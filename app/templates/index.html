@@ -1,12 +1,11 @@
 <html>
     <head>
-        {% if title %}
-        <title>{{ title }} - Microblog</title>
-        {% else %}
-        <title>Welcome to the home page</title>
-        {% endif %}
+      <title>Welcome to the home page</title>
     </head>
     <body>
-        {% extends "base.html" %}
+      {% extends "base.html" %}
+      {% block content %}
+        {% include "upload.html" %}
+      {% endblock %}
     </body>
 </html>
