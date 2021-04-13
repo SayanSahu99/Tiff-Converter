@@ -4,24 +4,40 @@
     </head>
     <body>
          {% block content %}
-         <div class="d-flex justify-content-center align-items-center">
-        <div class="card">
-          <div class="card-body">
-            <div class="container">
-              <form  action="/" method="POST" enctype="multipart/form-data">
-                <div class="mb-3">
-                  <label for="formFileMultiple" class="form-label">Upload Files</label>
-                  <input class="form-control form-control-lg" type="file" id="formFileMultiple"
-                  required
-                  name="files[]" accept=".tif" 
-                  multiple>
-                </div>
-                <button type="submit" class="btn btn-primary">Convert</button>
-              </form>
+          <div class="card m-5 ">
+            <h5 class="card-header card-title mx-5 my-3 text-center">This open-source online tool transforms TIFF files into optimized JPG/PNG. It can handle files of upto 50 MB.</h5>
+            <div class="card-body">
+              <p class="card-text">
+                <ol>
+                  <li class="h6 card-text">Click on Choose Files, and choose TIFF files upto 50 MB that you want to convert into JPG / PNG format.</li>
+                  <li class="h6 card-text">Choose the output file extension (jpg / png).</li>
+                  <li class="h6 card-text">Then, wait for the conversion to complete. Download your image files, in a single ZIP folder.</li>
+                </ol>
+              </p>
+              <div class="container-fluid">
+                <form  action="/" method="POST" enctype="multipart/form-data">
+                  <div class="form-group mb-3">
+                    <label for="formFileMultiple" class="form-label row ml-2">Upload Tiff Files</label>
+                    <input class="form-control form-control-lg mb-3" type="file" id="formFileMultiple"
+                    required
+                    name="files[]" 
+                    accept=".tif" 
+                    multiple
+                    total-max-size="50">
+                    <div class="container d-flex justify-content-center align-items-center">
+                    <select class="form-select form-select-lg mb-3 row" aria-label=".form-select-lg example" name="ext" id="ext">
+                      <option selected value="jpg">JPG</option>
+                      <option value="PNG">PNG</option>
+                    </select>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                    <button type="submit" class="btn btn-lg btn-dark mt-3 row">Convert</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
-         </div>
         {% endblock %}
     </body>
 </html>
